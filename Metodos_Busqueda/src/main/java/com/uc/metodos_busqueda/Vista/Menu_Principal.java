@@ -6,12 +6,11 @@ package com.uc.metodos_busqueda.Vista;
 
 import com.uc.metodos_busqueda.Controlador.ControladorA;
 import com.uc.metodos_busqueda.Controlador.ControladorBpp;
+import com.uc.metodos_busqueda.Controlador.ControladorColina;
 import com.uc.metodos_busqueda.Modelo.Nodo;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -48,7 +47,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         n_nodos = new javax.swing.JTextField();
         btn_bpp = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_ascenso = new javax.swing.JButton();
         btn_Asterisco = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         btn_arfin = new javax.swing.JButton();
@@ -88,7 +87,12 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Ascenso de colina");
+        btn_ascenso.setText("Ascenso de colina");
+        btn_ascenso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ascensoActionPerformed(evt);
+            }
+        });
 
         btn_Asterisco.setText("A*");
         btn_Asterisco.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +156,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 .addGap(150, 150, 150)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_bpp, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_ascenso, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(760, 760, 760)
                 .addComponent(btn_Asterisco, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -198,7 +202,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_bpp)
                         .addGap(27, 27, 27)
-                        .addComponent(jButton2)))
+                        .addComponent(btn_ascenso)))
                 .addComponent(btn_Asterisco)
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,6 +276,11 @@ public class Menu_Principal extends javax.swing.JFrame {
        mostrarMatrizfinalS();
        n_nodos.setText(String.valueOf(controladorA.getNodosGenerados()));
     }//GEN-LAST:event_btn_AsteriscoActionPerformed
+
+    private void btn_ascensoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ascensoActionPerformed
+        ControladorColina colina = new ControladorColina(estadoInicial, estadoMeta);
+        colina.resolver();
+    }//GEN-LAST:event_btn_ascensoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -405,8 +414,8 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_Asterisco;
     private javax.swing.JButton btn_arfin;
     private javax.swing.JButton btn_arini;
+    private javax.swing.JButton btn_ascenso;
     private javax.swing.JButton btn_bpp;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

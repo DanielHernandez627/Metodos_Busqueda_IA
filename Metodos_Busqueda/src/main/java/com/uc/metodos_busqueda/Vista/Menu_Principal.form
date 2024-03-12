@@ -54,7 +54,7 @@
                   <EmptySpace min="150" pref="150" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btn_bpp" min="-2" pref="120" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="btn_ascenso" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="102" attributes="0">
@@ -115,7 +115,7 @@
                       <Group type="102" attributes="0">
                           <Component id="btn_bpp" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_ascenso" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="btn_Asterisco" min="-2" max="-2" attributes="0"/>
@@ -194,10 +194,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_bppActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btn_ascenso">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ascenso de colina"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ascensoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_Asterisco">
           <Properties>
