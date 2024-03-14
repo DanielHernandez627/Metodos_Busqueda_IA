@@ -7,6 +7,7 @@ package com.uc.metodos_busqueda.Vista;
 import com.uc.metodos_busqueda.Controlador.ControladorA;
 import com.uc.metodos_busqueda.Controlador.ControladorBpp;
 import com.uc.metodos_busqueda.Controlador.ControladorColina;
+import com.uc.metodos_busqueda.Controlador.ControladorGenetico;
 import com.uc.metodos_busqueda.Modelo.Nodo;
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,7 +50,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         btn_bpp = new javax.swing.JButton();
         btn_ascenso = new javax.swing.JButton();
         btn_Asterisco = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btn_gen = new javax.swing.JButton();
         btn_arfin = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btn_arini = new javax.swing.JButton();
@@ -102,7 +103,12 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Algoritmo Genetico");
+        btn_gen.setText("Algoritmo Genetico");
+        btn_gen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_genActionPerformed(evt);
+            }
+        });
 
         btn_arfin.setText("Seleccionar archivo final");
         btn_arfin.setToolTipText("");
@@ -189,7 +195,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btn_gen, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel5)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,7 +235,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jButton4))
+                                .addComponent(btn_gen))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(10, 10, 10)
@@ -315,6 +321,11 @@ public class Menu_Principal extends javax.swing.JFrame {
     private void btn_reinicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reinicioActionPerformed
         reiniciarMenu();
     }//GEN-LAST:event_btn_reinicioActionPerformed
+
+    private void btn_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_genActionPerformed
+        ControladorGenetico genetico = new ControladorGenetico();
+        genetico.resolverPuzzle8(estadoInicial, estadoMeta);
+    }//GEN-LAST:event_btn_genActionPerformed
 
     /**
      * @param args the command line arguments
@@ -457,8 +468,8 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_arini;
     private javax.swing.JButton btn_ascenso;
     private javax.swing.JButton btn_bpp;
+    private javax.swing.JButton btn_gen;
     private javax.swing.JButton btn_reinicio;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
