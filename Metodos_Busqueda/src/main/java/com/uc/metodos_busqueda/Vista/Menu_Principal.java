@@ -272,12 +272,10 @@ public class Menu_Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_ariniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ariniActionPerformed
-        //limpiarMatrices();
         seleccionarArchivo(1);
     }//GEN-LAST:event_btn_ariniActionPerformed
 
     private void btn_arfinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arfinActionPerformed
-        //limpiarMatrices();
         seleccionarArchivo(2);
     }//GEN-LAST:event_btn_arfinActionPerformed
 
@@ -324,7 +322,10 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     private void btn_genActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_genActionPerformed
         ControladorGenetico genetico = new ControladorGenetico();
-        genetico.resolverPuzzle8(estadoInicial, estadoMeta);
+        matriz = genetico.resolverPuzzle8(estadoInicial, estadoMeta);
+        mostrarMatrizfinalS();
+        n_nodos.setText(String.valueOf(genetico.cantidadGeneraciones()));
+        genetico.guardarMatricesEnArchivo("matricesGenetico.txt");
     }//GEN-LAST:event_btn_genActionPerformed
 
     /**
